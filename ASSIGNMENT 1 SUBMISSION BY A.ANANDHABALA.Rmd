@@ -1,0 +1,144 @@
+---
+title: "ML ASSIGNMENT SUBMISSION BY A.ANANDHABALA"
+author: "ANANDHABALA"
+date: "2022-08-24"
+output: html_document
+---
+## package use as ISLR
+```{r}
+library(ISLR)
+```
+
+1.	This exercise involves the Auto data set studied in the lab. Make sure that the missing values have been removed from the data.
+
+ (a) Which of the predictors are quantitative, and which are qualitative?
+Ans:
+
+```{r}
+Auto
+```
+## explaination
+## the ISLR package contains the 9 columns and 392 Rows.
+
+```{r}
+str(Auto)
+```
+## explaination
+## its shows the  extra information about the Auto dataset.
+## its converts the string forms of data in Auto
+
+(b) What is the range of each quantitative predictor? You can answer this using the range() function.
+Ans:
+
+```{r}
+summary(Auto[, -c( 9)])
+```
+## explaination
+## its shows the 9 columns numerical data of min,sd,median extra
+## of numerical colums summary its shows.
+
+(c) What is the mean and standard deviation of each quantitative predictor? 
+Ans:
+
+```{r}
+sapply(Auto[, -c( 9)], mean)
+```
+## explaination 
+## its shows the each 9 columns mean value shows.
+
+```{r}
+sapply(Auto[, -c( 9)], sd)
+```
+## explaination 
+## its shows the each 9 columns standard diviation value shows.
+
+(d)	 Now remove the 10th through 85th observations. What is the range, mean, and standard deviation of each predictor in the subset of the data that remains? 
+Ans:
+
+```{r}
+upto85  <- Auto[-c(10:85), -c(9)]
+sapply(upto85, range)
+```
+## explaination
+## its shows the 1o To 85 observation of a 9 columns range shows.
+## thats store in upto85 variable.
+
+```{r}
+average <- Auto[-c(10:85), -c(9)]
+sapply(average, range)
+```
+## explaination
+## its shows the 1o To 85 observation of a 9 columns average shows.
+## thats store in average variable.
+
+```{r}
+standard <- Auto[-c(10:85), -c(9)]
+sapply(standard, range)
+```
+## explaination
+## its shows the 1o To 85 observation of a 9 columns standard diviation shows.
+## thats store in standard variable.
+
+```{r}
+sapply(upto85, mean)
+```
+## explaination 
+## finded the mean of Upto85
+
+```{r}
+sapply(upto85, sd)
+```
+## explaination 
+## finded the standard diviation of Upto85
+
+(e)	Using the full data set, investigate the predictors graphically, using scatter plots or other tools of your choice. Create some plots highlighting the relationships among the predictors. Comment on your findings.
+Ans:
+
+```{r}
+pairs(Auto)
+```
+## explaination 
+## pairplot created of a Auto dataset.  
+
+(f) Suppose that we wish to predict gas mileage (mpg) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting mpg? Justify your answer.
+Ans:
+
+```{r}
+cor(Auto$weight, Auto$horsepower)
+```
+## explaination 
+## any relationship between weight and horse power we use a correlation.
+
+```{r}
+cor(Auto$weight, Auto$displacement)
+```
+## explaination 
+## any relationship between weight and displacement we use a correlation.
+
+```{r}
+cor(Auto$displacement, Auto$horsepower)
+```
+## explaination 
+## any relationship between displacement and horse power we use a correlation.
+
+```{r}
+cor(Auto$cylinders, Auto$horsepower)
+```
+## explaination 
+## any relationship between cylinders and horse power we use a correlation.
+
+```{r}
+cor(Auto$cylinders, Auto$displacement)
+```
+## explaination 
+## any relationship between cylinders and displacement we use a correlation.
+
+```{r}
+cor(Auto$cylinders, Auto$weight)
+```
+## explaination 
+## any relationship between cylinders and weight we use a correlation.
+
+
+                         ### ASSIGNMENT 1 SUBMISSION By  ###
+                             ### A.ANANDHABALA ###
